@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/search"
+        android:title="@string/search"
+        android:icon="@drawable/menu_bottom1"
+        android:orderInCategory="1"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/messages"
+        android:title="@string/message"
+        android:orderInCategory="1"
+        android:icon="@drawable/menu_bottom2"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/add_contact"
+        android:title="@string/add_contact"
+        android:orderInCategory="1"
+        android:icon="@drawable/menu_bottom3"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="1"
+        android:icon="@drawable/menu_bottom4"
+        app:showAsAction="always" />
+
+
+
+</menu>

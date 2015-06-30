@@ -35,8 +35,6 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setDisplayShowHomeEnabled(false);
-        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#0984CA"));
-        actionBar.setBackgroundDrawable(colorDrawable);
 
 
         // Create the adapter that will return a fragment for each of the three
@@ -167,15 +165,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
         @Override
         public CharSequence getPageTitle(int position) {
-            /*Locale l = Locale.getDefault();
-            switch (position) {
-                case 0:
-                    return getString(R.string.title_section1).toUpperCase(l);
-                case 1:
-                    return getString(R.string.title_section2).toUpperCase(l);
-                case 2:
-                    return getString(R.string.title_section3).toUpperCase(l);
-            }*/
+
             return null;
         }
     }

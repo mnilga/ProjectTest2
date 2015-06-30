@@ -3,7 +3,6 @@ package marianilga.projecttest2;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,12 +10,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import java.util.ArrayList;
 import marianilga.model.Contact;
 import marianilga.model.ContactJson;
@@ -80,13 +76,11 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
         messages = mesJson.getMessages();
         imageMessages = new View[messages.size()];
 
-        for (Message message: messages){
-            int i = 0;
-            MyAdapter myAdapter = new MyAdapter(getActivity(), message);
-            imageMessages[i] = myAdapter.getView();
-            imageMessages[i].setOnClickListener(this);
-            linearLayout.addView(imageMessages[i], param);
-            i++;
+        for (int j = 0; j< messages.size(); j++){
+            MyAdapter myAdapter = new MyAdapter(getActivity(), messages.get(j));
+            imageMessages[j] = myAdapter.getView();
+            imageMessages[j].setOnClickListener(this);
+            linearLayout.addView(imageMessages[j], param);
         }
 
 
@@ -161,7 +155,6 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
-
         if (v.getId() == R.id.but_compose)   {
             showDialog("Clicked On", "Compose");
         }
@@ -171,12 +164,12 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
                     showDialog("Clicked On", contacts.get(i).getName());
                 }
             }
-        }
 
-        for(int j = 0; j < messages.size(); j++){
-            if (v.equals(imageMessages[j])){
-                showDialog("Clicked On", "from "+ messages.get(j).getFromId().getName() + " : " +
-                        messages.get(j).getTextMessage());
+            for(int j = 0; j < messages.size(); j++){
+                if (v.equals(imageMessages[j])){
+                    showDialog("Clicked On", "from "+ messages.get(j).getFromId().getName() + " : " +
+                            messages.get(j).getTextMessage());
+                }
             }
         }
 
